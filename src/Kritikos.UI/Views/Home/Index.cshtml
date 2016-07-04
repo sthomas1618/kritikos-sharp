@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="kritikos-app" asp-prerender-module="client/boot-server.jsx"
+     asp-prerender-webpack-config="webpack.config.js"></div>
+
+@section scripts {
+    <script src="/dist/main.js" asp-append-version="true"></script>
+}
