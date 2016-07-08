@@ -57,6 +57,7 @@ namespace Kritikos.Api
             // Add framework services.
             services.AddElm();
             services.AddMvc();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
@@ -86,7 +87,14 @@ namespace Kritikos.Api
             {
                 serviceScope.ServiceProvider.GetService<KritikosContext>().Database.Migrate();
             }
-            
+
+            app.UseCors(builder =>
+                // This will allow any request from any server.
+                builder.AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowAnyOrigin()
+           );
+
             app.UseOpenIddict();
 
             app.UseJwtBearerAuthentication(new JwtBearerOptions

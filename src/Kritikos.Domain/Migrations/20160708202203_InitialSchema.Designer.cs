@@ -1,17 +1,17 @@
 ﻿using System;
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-
+using Microsoft.EntityFrameworkCore.Migrations;
 using Kritikos.Domain.Data;
 
 namespace Kritikos.Domain.Migrations
 {
     [DbContext(typeof(KritikosContext))]
-    partial class KritikosContextModelSnapshot : ModelSnapshot
+    [Migration("20160708202203_InitialSchema")]
+    partial class InitialSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431");

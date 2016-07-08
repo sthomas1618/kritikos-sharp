@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Kritikos.Api.Controllers
 {
     [Authorize]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class ValuesController : Controller
     {
         // GET api/values
