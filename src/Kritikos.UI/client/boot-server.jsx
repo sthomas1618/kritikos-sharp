@@ -1,7 +1,8 @@
 ﻿import React from 'react';
+import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
-import { routes } from './components/KritikosApp';
+import { routes } from './app/KritikosApp';
 React;
 
 export default function renderApp (params) {
